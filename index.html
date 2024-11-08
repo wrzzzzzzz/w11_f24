@@ -86,22 +86,32 @@
 
         
         //Step 3: style the background to color #003366
-        document.body.style.property = "background-color: #003366";
+        document.body.style.backgroundColor = "#003366";
 
         // Step 4: Add the correct ID for the button, create an element 'p' and add a message "2023 Champions!" to p
-        document.getElementById("add ID here").addEventListener("click", function() {
-
+        document.getElementById("addMessageButton").addEventListener("click", function() {
+            const gameDayMessage = document.createElement("p"); 
+            gameDayMessage.textContent = "2023 Champions!"; 
             document.getElementById("message").appendChild(gameDayMessage); // Add to the message div
         });
 
         const playerItems = document.querySelectorAll("li");
         // Step 5: Use a conditional statement for playerItems. If there are more than 5 players, log a special message to the console "Go Blue, so many great players in one season!
+        // if (playerItems.length > 5) {
+        //     console.log("Go Blue, so many great players in one season!");
+        // }
 
         //Try it out with length > 4
+        if (playerItems.length > 4) {
+            console.log("Go Blue, so many great players in one season!");
+        }
+
 
         function displayInformation() {
             // Step 6: Update the three span elements using ONLY JavaScript
-
+            document.querySelector("#URL").innerHTML = window.location.href;
+            document.querySelector("#items").innerHTML = playerItems.length;
+            document.querySelector("#time").innerHTML = new Date();
         }
     </script>
 </body>
